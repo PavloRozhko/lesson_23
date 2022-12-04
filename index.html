@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lesson 23</title>
+	<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title">Урок 23 - JavaScript (частина 2).</h1>
+			</div>
+		</header>
+		<main class="page">
+			<section class="strings">
+				<div class="strings__content">
+					<div class="strings__container">
+						<h2 class="strings__title title">Рядки в JS.</h2>
+						<div class="strings__image">
+							<img src="img/strings.jpg" alt="image">
+						</div>
+						<div class="strings__text">
+							<p><span>Задача №1.</span></p>
+							<p>У задачі №1 в консоль повернеться наступний рядок: <code>Привет! Я ${fls}</code>.</p>
+							<p>Для того, щоб отримати очікуваний результат текст в рядку потрібно писати у зворотних лапках, а саме:
+								<code>let text = `Привет! Я ${fls}`;</code>.
+							</p>
+							<p><span>Задача №2.</span></p>
+							<p>Отримати символ "н" із рядка <code>'фрилансер'</code> можна отримати в консоль написавши наступний код:
+								<code>console.log(text[5]);</code>.
+							</p>
+							<p><span>Задача №3.</span></p>
+							<p>Не вірно. Результатом у консолі буде рядок "123456", оскільки бінарний оператор "+" не перетворює рядки
+								в числа.</p>
+							<p><span>Задача № 4.</span></p>
+							<p>Для того, щоб отримати рядок 'фрилансер'
+								у верхньому регістрі потрібно створити нову змінну та застосувати до неї метод "toUpperCase". Приклад
+								коду наступний:
+							<pre><code>let text = 'фрилансер';</code></pre>
+							<pre><code>let newText = text.toUpperCase();</code>.</pre>
+							</p>
+							<p><span>Задача №5.</span></p>
+							<p>Підрядок "лан" з рядка 'фрилансер' можна отримати використавши метод
+								"slice": <code>console.log(text.slice(3, 6));</code>.</p>
+							<p><span>Задача №6.</span></p>
+							<p>В консоль повернеться false, бо пошук підрядка "лан" почненться з 4 символу, який його не містить.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="numbers">
+				<div class="numbers__content">
+					<div class="numbers__container">
+						<h2 class="numbers__title title">Числа в JS.</h2>
+						<div class="numbers__image">
+							<img src="img/numbers.jpg" alt="image">
+						</div>
+						<div class="numbers__text">
+							<p><span>Задача №1.</span></p>
+							<p>Для того, щоб отримати правильний результат округлення необхідно скористатися властивістю
+								"Number.EPSILON". Код буде наступним:
+							<pre><code>let someNum = 1.005 + Number.EPSILON;</code></pre>
+							<pre><code>let someRoundNum = Math.round(someNum * 100) / 100;</code></pre>
+							<pre><code>console.log(someRoundNum);</code>.</pre>
+							</p>
+							<p><span>Задача №2.</span></p>
+							<p>Скориставшись властивістю "parseFloat" можна отримати число "135.58". Код буде
+								наступним:
+							<pre><code>let value = "135.58px";</code></pre>
+							<pre><code>let someNumTwo = parseFloat(value);</code>.</pre>
+							</p>
+							<p><span>Задача №3.</span></p>
+							<p>Вірне умовне розгалуження буде мати наступний вигляд:
+							<pre><code>let value = 58 + "Фрилансер";</code></pre>
+							<pre><code>if (isNaN(value)) {</code></pre>
+							<pre><code>   console.log('Результат виразу NaN');}</code></pre>
+							<pre><code>}</code>.</pre>
+							</p>
+							<p><span>Задача № 4.</span></p>
+							<p>Скориставшись властивістю "Math.max" можна знайти максимальне число. Приклад коду
+								наступний: <code>console.log(Math.max(10, 58, 39, -150 , 0));</code>.
+							</p>
+							<p><span>Задача №5.</span></p>
+							<p>Щоб округлити число "58.858" до числа "58" потрібно використати властивість "Math.floor". Приклад коду:
+							<pre><code>let someNum = 58.858;</code></pre>
+							<pre><code>let roundNum = Math.floor(someNum);</code></pre>
+							<pre><code>console.log(roundNum);</code>.</pre>
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="operators">
+				<div class="operators__content">
+					<div class="operators__container">
+						<h2 class="operators__title title">Оператори в JS.</h2>
+						<div class="operators__image">
+							<img src="img/operators.jpg" alt="image">
+						</div>
+						<div class="operators__text">
+							<p>З наведених на зображенні варіантів невірними є: №№ 1, 3, 4 та 5.</p>
+							<p><span>У варіанті № 1</span> спочатку унарний оператор "-" перетворить рядок "22" на число -22, оскільки
+								у нього вищий пріоритет за бінарний оператор "+". Далі буде виконана операція додавання, і через те, що
+								бінарний
+								оператор "+" не перетворює рядки на числа, то в консоль повернеться значення "35-22".</p>
+							<p><span>У варіанті № 3</span> повернеться помилка, оскільки інкремент не працює зі значеннями (тільки зі
+								змінними).</p>
+							<p><span>Варіанті № 4.</span> Оскільки до змінної "newUser" застосовується постфіксний інкремент, який
+								збільшує значення змінної на 1, але при цьому повертає попереднє присвоєне значення змінної, то в
+								результаті ми отримаємо 0, бо нашій змінній присвоєно значення змінної "userCounter", якій
+								присвоєний 0.</p>
+							<p><span>Варіанті № 5.</span> Тому, що оператор НЕ "!" має найвищий пріоритет у логічному виразі, то
+								першими
+								виконаються операції з його участю і значення false отримає значення не false, а значення пустий рядок
+								отримає значення непустий рядок. Наступною операцією за ріоритетністю виконається операція з оператором
+								І "&&", який повертає перше значення false або останнє значення. В першій частині виразу отримуємо 11, в
+								другій частині непустий рядок. Остання операція буде виконання з логічним оператором АБО "||", який
+								зупинить виконання операції на першому значенні, що повертає true - в нашому випадку це 11.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="if">
+				<div class="if__content">
+					<div class="if__container">
+						<h2 class="if__title title">Умовне розгалуження в JS.</h2>
+						<div class="if__image">
+							<img src="img/if.jpg" alt="image">
+						</div>
+						<div class="if__text">
+							<p>З наведених на зображенні варіантів "false" повернеться тільки у <span>варіанті № 1</span>,тому що
+								оператор суворого порівняння "===" не перетворює
+								рядок в число, а тому число 1 не дорівнює рядку "1".</p>
+							<p></p>
+							<p>Всі інші варіанти повернуть "true".</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="for">
+				<div class="for__content">
+					<div class="for__container">
+						<h2 class="for__title title">Цикли в JS.</h2>
+						<div class="for__image">
+							<img src="img/for.jpg" alt="image">
+						</div>
+						<div class="for__text">
+							<p><span>Задача №1.</span></p>
+							<p>Цифри від 1 до 5 можна вивести в консоль двома способами, а саме: скориставшись циклом "while" та
+								"for".</p>
+							<p>Приклад коду із циклом "while".</p>
+							<p>
+							<pre><code>let counter = 1;</code></pre>
+							<pre><code>while (counter < 6) {</code></pre>
+							<pre><code>  console.log(counter);</code></pre>
+							<pre><code>  counter++;</code></pre>
+							<pre><code>}</code>.</pre>
+							</p>
+							<p>Приклад коду із циклом "for".</p>
+							<p>
+							<pre><code>let counter;</code></pre>
+							<pre><code>for (counter = 1; counter < 6; counter++) {</code></pre>
+							<pre><code>  console.log(counter);</code></pre>
+							<pre><code>}</code>.</pre>
+							</p>
+							<p><span>Задача №2.</span></p>
+							<p>Останнім в консоль буде виведений результат, який = 1. Це відбудеться через те, що цикл "while" виконує
+								код доки тіло повертає значення true, а нуль повертає булеве значення false.
+							</p>
+							<p><span>Задача №3.</span></p>
+							<p>Переписаний код з циклу "for" на цикл "while" може мати наступний вигляд:
+							<pre><code>let num = 0;</code></pre>
+							<pre><code>while (num < 3) {</code></pre>
+							<pre><code>  console.log(`Число: ${num}`);</code></pre>
+							<pre><code>  num++;</code></pre>
+							<pre><code>}</code>.</pre>
+							</p>
+							<p><span>Задача № 4.</span></p>
+							<p>Код який припиняє роботу циклу № 1 може мати наступний вигляд:
+							<pre><code>firstFor: for (let num = 0; num < 2; num++) {</code></pre>
+							<pre><code>  for (let size = 0; size < 3; size++) {</code></pre>
+							<pre><code>    if (size == 1) {</code></pre>
+							<pre><code>      break firstFor;</code></pre>
+							<pre><code>    }</code></pre>
+							<pre><code>    console.log(size);</code></pre>
+							<pre><code>  }</code></pre>
+							<pre><code>}</code>.</pre>
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+	<script src="js/script.js"></script>
+</body>
+</html>
